@@ -1,0 +1,9 @@
+{% extends "base_page.html" %}
+
+
+
+{% block content %}
+	{% for question in general_array %}
+		<li> {{ question.title }} </li>
+	{% endfor %}
+{% endblock content %}

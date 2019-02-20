@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 d-flex flex-row-inline mb-0">
+			
+			<ul class="nav topmenu">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'index' %}">Главная</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#">Категории</a>
+				</li>
+				{% load socialaccount %}
+				{% if user.is_authenticated %}
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							Привет, {% if user.first_name %}{{user.first_name}}{%else%}{{user.username}}{%endif%}
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="{% url 'appusers:profile_page' user.username %}">Профиль</a>
+							<a class="dropdown-item" href="#">Сообщения</a>
+							<a class="dropdown-item" href="#">Мои вопросы и ответы</a>
+							<a class="dropdown-item" href="#">Настройки</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Выйти</a>
+						</div>
+					</li>
+				{%else%}
+					<li class="nav-item">
+						<a class="nav-link" href="{% provider_login_url "vk" method="oauth2" %}">Войти через ВК </a>
+					</li>
+				{%endif%}
+
+			</ul>
+
+		</div>
+	</div>
+</div>
+

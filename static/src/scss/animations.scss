@@ -1,0 +1,13 @@
+@keyframes shadow_bg {
+	from {}
+	to {
+		background: rgba($gray-900, 0.1);
+	}
+}
+@keyframes box_shadow{
+	from{}
+	to{
+		border: 0;
+		box-shadow: 0px 0px 15px rgba($gray-900, 0.5);
+	}
+}

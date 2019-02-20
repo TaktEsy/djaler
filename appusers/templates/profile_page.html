@@ -1,0 +1,106 @@
+{% extends "base_page.html" %}
+{% load socialaccount %}
+{% block content %}
+	
+	{# Начало блока профиля #}
+		<div class="row piece_of_pie">
+			<div class="col-12">
+				{% for account in user.socialaccount_set.all %}
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<h3>{{ account.extra_data.first_name }} {{ account.extra_data.last_name }}</h3>	
+									<span class="text-muted">Творческий псевдоним: {{ user.username }}</span>
+								</div>
+								<div class="card-body">	
+									<div class="row">
+										<div class="col-3 text-center"><img class="br-radius" src="{{ account.extra_data.photo_big }}"></img></div>
+										<div class="col-9 text-left">
+											<p>Дата регистрации: {{account.date_joined | date:"d F Y" }}</p>
+											<p>Избранные категории: </p>
+											<p>Репутация: </p>								
+										</div>
+										
+									</div>		    
+									<div class="row">
+										<div class="col-3 text-center">
+											<button href="" class="btn btn-success">Настройки профиля</button>
+										</div>
+									</div>	
+									
+									
+								</div>
+
+								
+							</div>
+						</div>	
+					</div>
+				{% endfor %}
+			</div>	
+		</div>
+	{# Конец блока профиля #}
+
+
+
+
+
+
+
+<!-- 	<div class="row piece_of_pie">
+		<div class="col-12">
+			
+			{% if answers|length == 0 %}				
+			<div class="card comment-card">
+				<div class="card-body">	
+					<p>Ответов на вопрос пока что нет</p>
+				</div>
+			</div>
+			{% else %}
+				{% for answer in answers %}		
+				<div class="card comment-card {% if answer.solve %} bg-success {%endif%}">
+					<div class="card-body">	
+						<p class="card-text"> {{ answer.text }} </p>
+					</div>
+
+					<div class="card-footer">
+						<small class="text-muted"> {{ answer.date_time }} </small>
+					</div>
+				</div>
+				{% endfor %}
+			{% endif %}
+			
+			<div class="card comment-card">
+				<div class="card-body">	
+					<form id="form_answer" class="form" method="post" action="">
+						{% csrf_token %}
+						<div class="form-group row">
+							<div class="col-12">
+								
+								{% if user.is_authenticated %}
+									{% for fieldArr in form_answer %} {{ fieldArr }} {% endfor %}
+									<button class="btn btn-success">Ответить</button>
+									
+									
+										<div style="display: inline-block;">
+											
+												<a href=""><h6 style="display: inline-block;">{{ account.extra_data.first_name }} {{ account.extra_data.last_name }}</h6</a>
+												<a href=""><p style="display: inline-block;"> <img src="{{ account.extra_data.photo }}"></p></a>
+										</div>
+									
+								{%else%}
+									<p> <button class="btn btn-success">Авторизируйтиесь</button> через </p>
+									
+									<a href="{% provider_login_url "vk" method="oauth2" %}">Vkontakte</a>
+								{%endif%}
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>  -->
+	
+	
+{% endblock content %}

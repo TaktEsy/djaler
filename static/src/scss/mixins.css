@@ -1,0 +1,12 @@
+.anim_shadower_bg {
+  animation: shadow_bg 0.25s ease-out;
+  animation-fill-mode: both; }
+
+.anim_box_shadower {
+  animation: box_shadow 0.25s ease-out;
+  animation-fill-mode: both; }
+
+.br-radius {
+  border-radius: 0.5rem; }
+
+/*# sourceMappingURL=mixins.css.map */

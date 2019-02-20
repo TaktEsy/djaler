@@ -1,0 +1,4 @@
+source ~/projects/virtualenvs/py352/bin/activate && uwsgi --emperor ~/projects/vassalsuwsgi/. --uid www-data --gid www-data 
+
+
+git s

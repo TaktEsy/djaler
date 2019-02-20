@@ -1,0 +1,58 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+	<div class="row piece_of_pie">
+		<div class="col-12">
+			<h3>Недавние вопросы</h3>
+			<div class="row">
+
+				{% for question in general_array %}
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+						
+						<a href="{% url 'appquest:question_page' question.slug %}">
+							<div class="card shadow-card">
+								
+								<div class="card-header-index">
+									<h5>{{question.title}}</h5>
+								</div>
+								<div class="card-body">	
+									<p class="card-text">{{question.text}}</p>
+									
+								</div>
+								<div class="card-footer">
+									<small class="text-muted"> 3 читателя</small>
+								</div>
+
+							</div>					
+						</a>
+							
+					</div>	
+				{% endfor %}		
+			</div>	
+		</div>
+	</div>
+	
+
+	<div class="row piece_of_pie">
+		<div class="col-12">
+			<h3>Лучшие пользователи</h3>
+			
+			<div class="row">		
+				{% for bestusers in general_array %}
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+						 <div class="card">
+							<div class="card-body">	
+								<p class="card-title">{{question.title}}</p>
+								<p class="card-text">{{question.text}}</p>
+								<a href="" class="btn btn-primary">Читать далее</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}		
+			</div>
+			
+		</div>
+	</div>
+	
+	
+{% endblock content %}

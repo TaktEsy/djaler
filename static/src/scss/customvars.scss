@@ -1,0 +1,22 @@
+/* Customs varibales */
+
+
+//
+// Color system
+//
+$body-bg: #f2f2f2;
+$text-color: $gray-900;
+// $facecolor: #214a61;
+$facecolor: #1e71cc;
+
+
+//
+// Paddings and margins in rem metric-sytem
+//
+$face_space: 3rem;						// 3.0 rem
+$big_space: $face_space - 0.5rem;		// 2.5 rem
+$middle_space: $big_space - 0.5rem;		// 2.0 rem
+$small_space: $middle_space - 0.5rem;	// 1.5 rem
+$skinny_space: $small_space - 0.5rem;	// 1.0 rem
+
+

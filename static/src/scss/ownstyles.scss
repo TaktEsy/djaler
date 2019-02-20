@@ -1,0 +1,130 @@
+/* General part */
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: $text-color;
+}
+body, html{
+	height: 100%;
+}
+a img:hover{
+
+}
+.comment-card{
+	margin-bottom: $small_space;
+
+	textarea{width: 100%; height: 200px;}
+	
+
+}
+.card-header{
+	h3{margin-bottom:0.2;}
+}
+
+.wrapper{
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+.content_box{
+	flex: 1 0 auto;
+	margin-top: $face_space;
+	margin-bottom: $face_space;
+	
+
+	.piece_of_pie{
+
+		margin-bottom: $face_space;
+		
+		.pie_box{
+			&:nth-child(2n+2){
+				padding-left: 0px !important; 
+				padding-right: 0px !important; 
+			}
+			padding: $skinny_space;
+		}
+	}
+}
+
+.footer_box{
+	flex: 0 0 auto;
+
+	
+}
+.fat_box{
+	background: $facecolor;
+}
+
+/*
+************
+****** Customisation of topmenu and its dropdown  
+************
+*/
+.topmenu {
+	a{ color: white;}
+	
+	.dropdown-menu{
+		margin:0px;
+		border-radius: 0rem 0rem 0.25rem 0.25rem;
+		a{color: $text-color;}
+		.dropdown-item:hover, .dropdown-item:focus{
+			background: 0;
+			@extend .anim_shadower_bg;
+		}
+	}
+	
+
+	li:hover{
+		@extend .anim_shadower_bg;
+	}
+
+	.nav-link{
+		padding: 0.7rem 1.2rem
+	}
+}
+
+li, ul, menu{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* --- Rewrited Bootstrap --- */
+.shadow-card{
+	min-height: 100%;
+	box-sizing: box-sizing;
+	&:hover{
+		@extend .anim_box_shadower;
+		
+	}
+}
+.profile-img{
+	@extend .br-radius; 
+}
+.card{
+
+	& img:hover{
+		@extend .anim_shadower_bg;
+	}
+}
+.card-header, .card-body, .card-footer{
+	z-index: 2;
+	
+
+}
+.card-header{
+	h4,h5{
+		margin: 0;
+		font-weight: bold;
+	}
+}
+.card-body{
+	color: $text-color;
+}
+.card-header-index{
+	@extend .card-header;
+	background: $facecolor;
+}
+
+div[class^=col]>a{
+	text-decoration: none;
+	color: white;
+}
