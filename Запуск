@@ -1,1 +1,0 @@
-cd projects &&  source virtualenvs/py352/bin/activate && uwsgi --emperor ~/projects/vassalsuwsgi/
