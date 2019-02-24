@@ -446,3 +446,305 @@ Traceback (most recent call last):
     self.questions = Questions.objects.select_related("extuser__username").values("id", "title", "text", "date_time", "slug", "extuser__username", "category__name").filter(hided=False, published=True).order_by('?')[:3]
 NameError: name 'Questions' is not defined
 [pid: 12030|app: 0|req: 3/21] 127.0.0.1 () {46 vars in 943 bytes} [Wed Oct  3 18:26:01 2018] GET / => generated 72971 bytes in 32 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Sun Feb 24 22:22:38 2019] ***
+compiled with version: 5.4.0 20160609 on 30 September 2018 13:51:55
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: intel
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/adam/projects/vassalsuwsgi
+writing pidfile to /home/adam/projects/djaler/temps/djaler.pid
+detected binary path: /home/adam/projects/virtualenvs/py352/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/adam/projects/djaler
+your processes number limit is 31413
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/adam/projects/djaler/temps/djaler.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+PEP 405 virtualenv detected: /home/adam/projects/virtualenvs/py352
+Set PythonHome to /home/adam/projects/virtualenvs/py352
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15a7d30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 507960 bytes (496 KB) for 4 cores
+*** Operational MODE: preforking ***
+added ./ to pythonpath.
+Traceback (most recent call last):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 15, in <module>
+    import MySQLdb as Database
+ImportError: No module named 'MySQLdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "./djaler/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/apps/registry.py", line 112, in populate
+    app_config.import_models()
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/base.py", line 101, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/base.py", line 305, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/options.py", line 203, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/__init__.py", line 33, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/utils.py", line 202, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/utils.py", line 110, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 20, in <module>
+    ) from err
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.
+Did you install mysqlclient?
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18508)
+spawned uWSGI worker 1 (pid: 18511, cores: 1)
+spawned uWSGI worker 2 (pid: 18512, cores: 1)
+spawned uWSGI worker 3 (pid: 18513, cores: 1)
+spawned uWSGI worker 4 (pid: 18514, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18513|app: -1|req: -1/1] 127.0.0.1 () {44 vars in 979 bytes} [Sun Feb 24 19:23:21 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+--- no python application found, check your startup logs for errors ---
+[pid: 18514|app: -1|req: -1/2] 127.0.0.1 () {44 vars in 956 bytes} [Sun Feb 24 19:23:22 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+SIGINT/SIGQUIT received...killing workers...
+Sun Feb 24 19:25:46 2019 - received message 0 from emperor
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/adam/projects/djaler/temps/djaler.sock removed.
+*** Starting uWSGI 2.0.17.1 (64bit) on [Sun Feb 24 22:25:55 2019] ***
+compiled with version: 5.4.0 20160609 on 30 September 2018 13:51:55
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: intel
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/adam/projects/vassalsuwsgi
+writing pidfile to /home/adam/projects/djaler/temps/djaler.pid
+detected binary path: /home/adam/projects/virtualenvs/py352/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/adam/projects/djaler
+your processes number limit is 31413
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/adam/projects/djaler/temps/djaler.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+PEP 405 virtualenv detected: /home/adam/projects/virtualenvs/py352
+Set PythonHome to /home/adam/projects/virtualenvs/py352
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7e2d30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 507960 bytes (496 KB) for 4 cores
+*** Operational MODE: preforking ***
+added ./ to pythonpath.
+Traceback (most recent call last):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 15, in <module>
+    import MySQLdb as Database
+ImportError: No module named 'MySQLdb'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "./djaler/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/apps/registry.py", line 112, in populate
+    app_config.import_models()
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/base.py", line 101, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/base.py", line 305, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/models/options.py", line 203, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/__init__.py", line 33, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/utils.py", line 202, in __getitem__
+    backend = load_backend(db['ENGINE'])
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/utils.py", line 110, in load_backend
+    return import_module('%s.base' % backend_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 20, in <module>
+    ) from err
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.
+Did you install mysqlclient?
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18671)
+spawned uWSGI worker 1 (pid: 18682, cores: 1)
+spawned uWSGI worker 2 (pid: 18683, cores: 1)
+spawned uWSGI worker 3 (pid: 18684, cores: 1)
+spawned uWSGI worker 4 (pid: 18685, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18685|app: -1|req: -1/1] 127.0.0.1 () {46 vars in 1010 bytes} [Sun Feb 24 19:25:58 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+--- no python application found, check your startup logs for errors ---
+[pid: 18684|app: -1|req: -1/2] 127.0.0.1 () {48 vars in 1009 bytes} [Sun Feb 24 19:25:58 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+announcing my loyalty to the Emperor...
+--- no python application found, check your startup logs for errors ---
+[pid: 18685|app: -1|req: -1/3] 127.0.0.1 () {48 vars in 1032 bytes} [Sun Feb 24 19:26:00 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18685|app: -1|req: -1/4] 127.0.0.1 () {48 vars in 1009 bytes} [Sun Feb 24 19:26:00 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+Sun Feb 24 19:27:54 2019 - received message 0 from emperor
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/adam/projects/djaler/temps/djaler.sock removed.
+*** Starting uWSGI 2.0.17.1 (64bit) on [Sun Feb 24 22:32:13 2019] ***
+compiled with version: 5.4.0 20160609 on 30 September 2018 13:51:55
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: intel
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/adam/projects/vassalsuwsgi
+writing pidfile to /home/adam/projects/djaler/temps/djaler.pid
+detected binary path: /home/adam/projects/virtualenvs/py352/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/adam/projects/djaler
+your processes number limit is 31413
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/adam/projects/djaler/temps/djaler.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+PEP 405 virtualenv detected: /home/adam/projects/virtualenvs/py352
+Set PythonHome to /home/adam/projects/virtualenvs/py352
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xf17cf0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 507960 bytes (496 KB) for 4 cores
+*** Operational MODE: preforking ***
+added ./ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xf17cf0 pid: 19480 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19480)
+spawned uWSGI worker 1 (pid: 19482, cores: 1)
+spawned uWSGI worker 2 (pid: 19483, cores: 1)
+spawned uWSGI worker 3 (pid: 19484, cores: 1)
+spawned uWSGI worker 4 (pid: 19485, cores: 1)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/core/handlers/base.py", line 111, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "./djaler/urls.py", line 20, in <module>
+    from app_questions.views import IndexPage
+ImportError: No module named 'app_questions'
+[pid: 19485|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 1010 bytes} [Sun Feb 24 19:32:18 2019] GET / => generated 103495 bytes in 116 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/utils/deprecation.py", line 90, in __call__
+    response = self.process_request(request)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/middleware/common.py", line 52, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    not is_valid_path(request.path_info, urlconf) and
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/base.py", line 157, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 491, in resolve
+    for pattern in self.url_patterns:
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 533, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/utils/functional.py", line 37, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/adam/projects/virtualenvs/py352/lib/python3.5/site-packages/django/urls/resolvers.py", line 526, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "./djaler/urls.py", line 20, in <module>
+    from app_questions.views import IndexPage
+ImportError: No module named 'app_questions'
+[pid: 19485|app: 0|req: 2/2] 127.0.0.1 () {48 vars in 1009 bytes} [Sun Feb 24 19:32:18 2019] GET /favicon.ico => generated 119290 bytes in 63 msecs (HTTP/1.1 500) 1 headers in 63 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+Sun Feb 24 19:36:17 2019 - received message 0 from emperor
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/adam/projects/djaler/temps/djaler.sock removed.
