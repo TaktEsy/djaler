@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e17b17c-24b7-4f9f-8770-4cff37c93dae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2e17b17c-24b7-4f9f-8770-4cff37c93dae" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,9 +179,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="400" y="24" width="1520" height="1056" extended-state="4" />
+    <frame x="992" y="24" width="928" height="1056" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17774762" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29705215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -194,8 +192,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4997236" weight="0.3291536" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997236" weight="0.3291536" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.77204883" visible="true" weight="0.5037675" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22795115" side_tool="true" visible="true" weight="0.5037675" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.77097505" visible="true" weight="0.5037675" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22902495" side_tool="true" visible="true" weight="0.5037675" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49775785" weight="0.3281075" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -223,6 +221,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
