@@ -1,0 +1,11 @@
+__pycache__/
+*.log
+*.sqlite3
+*.idea
+settings.*
+
+static/
+configs/
+djaler/
+temps/
+
